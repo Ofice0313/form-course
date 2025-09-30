@@ -1,18 +1,18 @@
 <?php
 
-use App\Controller\AlunoController;
+use App\Controller\CursoController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($url)
 {
     case '/':
-        echo "Página Inícial do Curso";
+        CursoController::index();
     break;
     case '/cursos':
-        echo "Listagem de cursos";
+        CursoController::listar();
     break;
     case '/cursos/cadastrar':
-        echo "Página de cadastro de curso";
+        CursoController::cadastrar();
     break;
 }
